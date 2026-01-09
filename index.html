@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Pema ❤️ Ta Shey</title>
+
+<style>
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(180deg,#ffcc00,#ff4d4d);
+  font-family:"Segoe UI",sans-serif;
+  color:white;
+  overflow:hidden;
+}
+
+.card{
+  background:rgba(0,0,0,.38);
+  padding:38px 45px;
+  border-radius:22px;
+  text-align:center;
+  box-shadow:0 30px 70px rgba(0,0,0,.5);
+  max-width:560px;
+}
+
+h1{font-size:2.4rem;margin-bottom:5px;}
+h2{margin-top:0;font-weight:400;opacity:.9;}
+
+#time{margin:10px 0;font-size:1rem;opacity:.9;}
+
+pre{
+  font-family:monospace;
+  font-size:14px;
+  line-height:1.2;
+  margin:25px auto;
+}
+
+.buttons{
+  margin-top:25px;
+  display:flex;
+  justify-content:center;
+  gap:22px;
+}
+
+button{
+  padding:12px 28px;
+  font-size:16px;
+  border:none;
+  border-radius:30px;
+  cursor:pointer;
+}
+
+#accept{background:#00e676;font-weight:bold;}
+#reject{background:#ff5252;}
+
+#message{margin-top:20px;font-size:1.25rem;font-weight:600;}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+<h1>Ta Shey Cho Den ❤️</h1>
+<h2>From: Pema Drakpa</h2>
+
+<div id="time"></div>
+
+<pre>
+|￣￣￣￣￣￣￣￣￣￣￣￣|
+|        I LOVE YOU!     |
+|＿＿＿＿￣￣￣￣￣￣￣￣|
+           \ (•◡•) /
+            \     /
+              ——
+              |  |
+              |_ |_ 
+</pre>
+
+<p>
+This is my last and final honest proposal.<br><br>
+If your heart allows,<br>
+will you choose me? 💍
+</p>
+
+<div class="buttons">
+  <button id="accept" onclick="accept()">Accept 💖</button>
+  <button id="reject" onclick="reject()">Reject 🙈</button>
+</div>
+
+<div id="message"></div>
+
+</div>
+
+<script>
+// Bhutan Time
+const timeBox=document.getElementById("time");
+function updateBhutanTime(){
+ const now=new Date();
+ const bhutan=new Date(now.getTime()+(6*60+now.getTimezoneOffset())*60000);
+ timeBox.innerHTML="🇧🇹 Bhutan Time: "+bhutan.toLocaleString();
+}
+setInterval(updateBhutanTime,1000);
+updateBhutanTime();
+
+// Gmail notification
+function accept(){
+ document.body.style.background="linear-gradient(180deg,#00c853,#b2ff59)";
+ message.innerHTML="💘 Thank you for choosing me 💘";
+
+ window.location.href =
+ "mailto:drakpapema62@gmail.com?subject=My Answer&body=I clicked ACCEPT. I choose you. 💖";
+}
+
+function reject(){
+ message.innerHTML="Thank you for your honesty 🤍";
+
+ window.location.href =
+ "mailto:drakpapema62@gmail.com?subject=My Answer&body=I clicked REJECT. Thank you for respecting my choice. 🤍";
+}
+</script>
+
+</body>
+</html>
